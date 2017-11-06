@@ -97,6 +97,79 @@ The output hash contains:
   ranges: (Hash) All summary data by ranges where was called, from last 'add' call to current 'add' call
 
 
+Example of output:
+```ruby
+{  :name=>:add_customer_wrong, 
+   :total_time=>4.461446, 
+   :started=>2017-11-06 16:10:53 +0000, 
+   :finished=>2017-11-06 16:10:57 +0000, 
+   :locations=>{
+      "/add_customer.rb:509"=>{:secs=>0.0, :percent=>0, :count=>1}, 
+	  "/add_customer.rb:529"=>{:secs=>0.008001, :percent=>0, :count=>1}, 
+	  "/add_customer.rb:532"=>{:secs=>0.212021, :percent=>5, :count=>1}, 
+	  "/add_customer.rb:569"=>{:secs=>0.006001, :percent=>0, :count=>1}, 
+	  "/add_customer.rb:581"=>{:secs=>0.446045, :percent=>10, :count=>1}, 
+	  "/add_customer.rb:583"=>{:secs=>3.789378, :percent=>85, :count=>1}, 
+	  "/add_customer.rb:585"=>{:secs=>0.0, :percent=>0, :count=>1}, 
+	  "/add_customer.rb:587"=>{:secs=>0.0, :percent=>0, :count=>1}, 
+	  "/add_customer.rb:595"=>{:secs=>0.0, :percent=>0, :count=>1}, 
+	  "/add_customer.rb:603"=>{:secs=>0.0, :percent=>0, :count=>1}, 
+	  "/add_customer.rb:612"=>{:secs=>0.0, :percent=>0, :count=>1}, 
+	  "/add_customer.rb:617"=>{:secs=>0.0, :percent=>0, :count=>1}
+	}, 
+	:labels=>{
+		:database_access=>{:secs=>4,447444, :percent=>99, :count=>3},
+		:checkouts=>{:secs=>0.0, :percent=>0, :count=>2},
+	}, 
+	:ranges=>{
+	  "/add_customer.rb:509 - /add_customer.rb:529"=>{:secs=>0.008001, :percent=>0, :count=>1}, 
+	  "/add_customer.rb:529 - /add_customer.rb:532"=>{:secs=>0.212021, :percent=>5, :count=>1}, 
+	  "/add_customer.rb:532 - /add_customer.rb:569"=>{:secs=>0.006001, :percent=>0, :count=>1}, 
+	  "/add_customer.rb:569 - /add_customer.rb:581"=>{:secs=>0.446045, :percent=>10, :count=>1}, 
+	  "/add_customer.rb:581 - /add_customer.rb:583"=>{:secs=>3.789378, :percent=>85, :count=>1}, 
+	  "/add_customer.rb:583 - /add_customer.rb:585"=>{:secs=>0.0, :percent=>0, :count=>1}, 
+	  "/add_customer.rb:585 - /add_customer.rb:587"=>{:secs=>0.0, :percent=>0, :count=>1}, 
+	  "/add_customer.rb:587 - /add_customer.rb:595"=>{:secs=>0.0, :percent=>0, :count=>1}, 
+	  "/add_customer.rb:595 - /add_customer.rb:603"=>{:secs=>0.0, :percent=>0, :count=>1}, 
+	  "/add_customer.rb:603 - /add_customer.rb:612"=>{:secs=>0.0, :percent=>0, :count=>1}, 
+	  "/add_customer.rb:612 - /add_customer.rb:617"=>{:secs=>0.0, :percent=>0, :count=>1}
+	}, 
+	:message=>"
+	
+		Total time <add_customer_wrong>:4.46
+		Total time by location:
+			/add_customer.rb:509: 0.0 (0%) #1
+			/add_customer.rb:529: 0.01 (0%) #1
+			/add_customer.rb:532: 0.21 (5%) #1
+			/add_customer.rb:569: 0.01 (0%) #1
+			/add_customer.rb:581: 0.45 (10%) #1
+			/add_customer.rb:583: 3.79 (85%) #1
+			/add_customer.rb:585: 0.0 (0%) #1
+			/add_customer.rb:587: 0.0 (0%) #1
+			/add_customer.rb:595: 0.0 (0%) #1
+			/add_customer.rb:603: 0.0 (0%) #1
+			/add_customer.rb:612: 0.0 (0%) #1
+			/add_customer.rb:617: 0.0 (0%) #1
+		Total time by label:
+			database_access: 4.45 (99%) #3
+			checkouts: 0.0 (0%) #2
+		Total time by range:
+			/add_customer.rb:509 - /add_customer.rb:529: 0.01 (0%) #1
+			/add_customer.rb:529 - /add_customer.rb:532: 0.21 (5%) #1
+			/add_customer.rb:532 - /add_customer.rb:569: 0.01 (0%) #1
+			/add_customer.rb:569 - /add_customer.rb:581: 0.45 (10%) #1
+			/add_customer.rb:581 - /add_customer.rb:583: 3.79 (85%) #1
+			/add_customer.rb:583 - /add_customer.rb:585: 0.0 (0%) #1
+			/add_customer.rb:585 - /add_customer.rb:587: 0.0 (0%) #1
+			/add_customer.rb:587 - /add_customer.rb:595: 0.0 (0%) #1
+			/add_customer.rb:595 - /add_customer.rb:603: 0.0 (0%) #1
+			/add_customer.rb:603 - /add_customer.rb:612: 0.0 (0%) #1
+			/add_customer.rb:612 - /add_customer.rb:617: 0.0 (0%) #1
+	"
+}
+```
+
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/marioruiz/timify.
