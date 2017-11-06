@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.name        = 'jimify'
+  s.name        = 'timify'
   s.version     = '0.0.1'
   s.date        = '2017-11-06'
   s.summary     = "Calculates the time running and reports summaries"
