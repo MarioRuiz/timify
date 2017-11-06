@@ -1,10 +1,6 @@
 # Timify
 
 [![Gem Version](https://badge.fury.io/rb/timify.svg)](https://rubygems.org/gems/timify)
-[![Build Status](https://travis-ci.org/marioruiz/timify.svg?branch=master)](https://travis-ci.org/marioruiz/timify)
-[![Coverage Status](https://coveralls.io/repos/github/marioruiz/timing/badge.svg?branch=master)](https://coveralls.io/github/marioruiz/timify?branch=master)
-[![Code Climate](https://codeclimate.com/github/marioruiz/timify.svg)](https://codeclimate.com/github/marioruiz/timify)
-[![Dependency Status](https://gemnasium.com/marioruiz/timify.svg)](https://gemnasium.com/marioruiz/timify)
 
 Ruby gem to calculate the time running from one location to another inside your code and report summaries
 
