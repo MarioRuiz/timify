@@ -1,13 +1,15 @@
 ###############################################################
-# Calculates the time running from one location to another inside your code
-# attr_accessor:
-#   min_time_to_show: minimum time to show the elapsed time when calling 'add' method
-#   show: print out results on screen
-# attr_reader:
-#   name: name given for the Timify instance
-#   initial_time: when the instance was created
-#   total: total time elapsed
-#   max_time_spent: maximum time measured for this instance
+# Calculates the time running from one location to another inside your code. More info: https://github.com/MarioRuiz/timify/
+#
+#   attr_accessor:
+#     min_time_to_show: minimum time to show the elapsed time when calling 'add' method
+#     show: print out results on screen
+#
+#   attr_reader:
+#     name: name given for the Timify instance
+#     initial_time: when the instance was created
+#     total: total time elapsed
+#     max_time_spent: maximum time measured for this instance
 ###############################################################
 class Timify
   attr_accessor :min_time_to_show, :show
@@ -18,6 +20,7 @@ class Timify
   #   name: name for the instance
   #   min_time_to_show: minimum time to show the elapsed time when calling 'add' method
   #   show: print out results on screen
+  #
   # examples:
   #   t = Timify.new :create_user
   #   t.show = false
@@ -40,21 +43,25 @@ class Timify
   end
 
   ###############################################################
-  # Adds a new point to count the time elapsed. It will count from the last 'add' call or Timify creation in case of the first 'add'.
-  # input:
-  #   label: (optional) In case supplied it will summarize all the ones with the same label
-  # output: (float)
-  #   time elapsed in seconds
-  # examples:
-  #   t=Timify.new :example
-  #   t.add; run_sqls; t.add :database
-  #   t.add
-  #   #some processes
-  #   t.add
-  #   #some processes
-  #   send_email_alert if t.add > 0.2
-  #   #some processes
-  #   do_log(t.totals[:message]) if t.add > 0.5
+  # Adds a new point to count the time elapsed.
+  # It will count from the last 'add' call or Timify creation in case of the first 'add'.
+  #
+  #   input:
+  #     label: (optional) In case supplied it will summarize all the ones with the same label
+  #
+  #   output: (float)
+  #     time elapsed in seconds
+  #
+  #   examples:
+  #     t=Timify.new :example
+  #     t.add; run_sqls; t.add :database
+  #     t.add
+  #     #some processes
+  #     t.add
+  #     #some processes
+  #     send_email_alert if t.add > 0.2
+  #     #some processes
+  #     do_log(t.totals[:message]) if t.add > 0.5
   ###############################################################
   def add(*label)
     if !label.empty?
@@ -102,21 +109,23 @@ class Timify
 
   ###############################################################
   # returns all data for this instance
-  # input:
-  #   json: (boolean) in case of true the output will be in json format instead of a hash
-  # output: (Hash or json string)
-  #   name: (String) name given for this instance'
-  #   total_time: (float) total elapsed time from initialization to last 'add' call
-  #   started: (Time)
-  #   finished: (Time)
-  #   message: (String) a printable friendly message giving all information
-  #   locations, labels, ranges: (Hash) the resultant hash contains:
-  #     secs: (float) number of seconds
-  #     percent: (integer) percentage in reference to the total time
-  #     count: (integer) number of times
-  #   locations: (Hash) All summary data by location where was called
-  #   labels: (Hash) All summary data by label given on 'add' method
-  #   ranges: (Hash) All summary data by ranges where was called, from last 'add' call to current 'add' call
+  #
+  #   input:
+  #     json: (boolean) in case of true the output will be in json format instead of a hash
+  #
+  #   output: (Hash or json string)
+  #     name: (String) name given for this instance'
+  #     total_time: (float) total elapsed time from initialization to last 'add' call
+  #     started: (Time)
+  #     finished: (Time)
+  #     message: (String) a printable friendly message giving all information
+  #     locations, labels, ranges: (Hash) the resultant hash contains:
+  #       secs: (float) number of seconds
+  #       percent: (integer) percentage in reference to the total time
+  #       count: (integer) number of times
+  #     locations: (Hash) All summary data by location where was called
+  #     labels: (Hash) All summary data by label given on 'add' method
+  #     ranges: (Hash) All summary data by ranges where was called, from last 'add' call to current 'add' call
   ###############################################################
   def totals(json: false)
     require 'json' if json
