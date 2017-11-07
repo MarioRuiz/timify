@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'timify'
   s.version     = '0.0.2'
-  s.date        = '2017-11-06'
+  s.date        = '2017-11-07'
   s.summary     = "Calculates the time running and reports summaries"
   s.description = "Calculates the time running from one location to another inside your code and reports summaries"
   s.authors     = ["Mario Ruiz"]

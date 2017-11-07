@@ -114,7 +114,7 @@ class Timify
   #     json: (boolean) in case of true the output will be in json format instead of a hash
   #
   #   output: (Hash or json string)
-  #     name: (String) name given for this instance'
+  #     name: (String) name given for this instance
   #     total_time: (float) total elapsed time from initialization to last 'add' call
   #     started: (Time)
   #     finished: (Time)
