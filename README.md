@@ -2,7 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/timify.svg)](https://rubygems.org/gems/timify)
 
-Ruby gem to calculate the time running from one location to another inside your code and report summaries
+Easily calculates the time running (elapsed time) from one location to another inside your code and reports statistics. It helps you improve your code and find out which part of your code is consuming more time.
 
 ## Installation
 
@@ -44,7 +44,7 @@ The scopes of the instances can be even global so you can measure the elapsed ti
 
 ### add
 
-Adds a new point to count the time elapsed. It will count from the last 'add' call or Timify creation in case of the first 'add'.
+Adds a new point to count the elapsed time. It will count from the last 'add' call or Timify creation in case of the first 'add'.
 
 You can supply a label that will summarize all the ones with the same label
 
@@ -59,7 +59,7 @@ t.add
 #some processes
 t.add
 #some processes
-send_email_alert if t.add > 0.2
+send_email_alert(t.totals[:message]) if t.add > 0.2
 #some processes
 do_log(t.totals[:message]) if t.add > 0.5
 ```
@@ -72,29 +72,29 @@ In case json parameter supplied as true, the output will be in json format inste
 
 The output hash contains:
 
-  name: (String) name given for this instance'
+    name: (String) name given for this instance'
 
-  total_time: (float) total elapsed time from initialization to last 'add' call
+    total_time: (float) total elapsed time from initialization to last 'add' call
 
-  started: (Time)
+    started: (Time)
 
-  finished: (Time)
+    finished: (Time)
 
-  message: (String) a printable friendly message giving all information
+    message: (String) a printable friendly message giving all information
 
-  locations, labels, ranges: (Hash) the resultant hash contains:
+    locations, labels, ranges: (Hash) the resultant hash contains:
 
-    secs: (float) number of seconds
+        secs: (float) number of seconds
 
-    percent: (integer) percentage in reference to the total time
+        percent: (integer) percentage in reference to the total time
 
-    count: (integer) number of times
+        count: (integer) number of times
 
-  locations: (Hash) All summary data by location where was called
+    locations: (Hash) All summary data by location where was called
 
-  labels: (Hash) All summary data by label given on 'add' method
+    labels: (Hash) All summary data by label given on 'add' method
 
-  ranges: (Hash) All summary data by ranges where was called, from last 'add' call to current 'add' call
+    ranges: (Hash) All summary data by ranges where was called, from last 'add' call to current 'add' call
 
 
 Example of output:
