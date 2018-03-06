@@ -1,0 +1,5 @@
+--readme README.md
+--title 'timify - Easily calculates the time running (elapsed time) from one location to another inside your code and reports statistics.'
+--charset utf-8
+--markup markdown
+'lib/**/*.rb' - '*.md' - 'LICENSE'
