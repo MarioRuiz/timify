@@ -42,6 +42,12 @@ t = Timify.new :create_user, show: true, min_time_to_show: 0.3
 
 The scopes of the instances can be even global so you can measure the elapsed times between different classes, methods... on your code.
 
+You can disable the timify counter whenever you want using the status attritute that admits :on or :off, by default is set to :on
+
+```ruby
+t.status = :off
+```
+
 ### add
 
 Adds a new point to count the elapsed time. It will count from the last 'add' call or Timify creation in case of the first 'add'.

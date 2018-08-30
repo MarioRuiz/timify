@@ -4,6 +4,7 @@
 #   attr_accessor:
 #     min_time_to_show: minimum time to show the elapsed time when calling 'add' method
 #     show: print out results on screen
+#	  status: (default :on) You can set :on or :off the status so it will counting the time or not
 #
 #   attr_reader:
 #     name: name given for the Timify instance
@@ -12,7 +13,7 @@
 #     max_time_spent: maximum time measured for this instance
 ###############################################################
 class Timify
-  attr_accessor :min_time_to_show, :show
+  attr_accessor :min_time_to_show, :show, :status
   attr_reader :name, :total, :initial_time, :max_time_spent
 
   ###############################################################
@@ -64,6 +65,7 @@ class Timify
   #     do_log(t.totals[:message]) if t.add > 0.5
   ###############################################################
   def add(*label)
+	return 0 if @status==:off
     if !label.empty?
       label=label[0]
     else
@@ -128,6 +130,7 @@ class Timify
   #     ranges: (Hash) All summary data by ranges where was called, from last 'add' call to current 'add' call
   ###############################################################
   def totals(json: false)
+  	return {} if @status==:off
     require 'json' if json
     output={
         name: @name,
