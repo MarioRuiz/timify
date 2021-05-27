@@ -149,7 +149,7 @@ class Timify
       else
         percent=(secs*100/(@total).to_f).round(0)
       end
-      message+= "\t#{location}: #{secs.round(2)} (#{percent}%) ##{@count[location]}"
+      message+= "\t#{location}: #{secs.round(2)} (#{percent}%) ##{@count[location]}\n"
       output[:locations][location]={
           secs: secs,
           percent: percent,
@@ -164,7 +164,7 @@ class Timify
         else
           percent=(secs*100/(@total).to_f).round(0)
         end
-        message+= "\t#{label}: #{secs.round(2)} (#{percent}%) ##{@count[label]}"
+        message+= "\t#{label}: #{secs.round(2)} (#{percent}%) ##{@count[label]}\n"
         output[:labels][label]={
             secs: secs,
             percent: percent,
@@ -181,7 +181,7 @@ class Timify
         else
           percent=(secs*100/(@total).to_f).round(0)
         end
-        message+= "\t#{range}: #{secs.round(2)} (#{percent}%) ##{@count[range]}"
+        message+= "\t#{range}: #{secs.round(2)} (#{percent}%) ##{@count[range]}\n"
         output[:ranges][range]={
             secs: secs,
             percent: percent,
